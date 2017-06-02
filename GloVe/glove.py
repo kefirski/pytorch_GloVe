@@ -71,14 +71,3 @@ class GloVe(nn.Module):
     def embeddings(self):
         return self.in_embed.weight.data.cpu().numpy() + self.out_embed.weight.data.cpu().numpy()
 
-
-if __name__ == '__main__':
-    cooc = np.random.rand(10, 10)
-    # x = Variable(t.from_numpy(cooc))
-    glove = GloVe(cooc, 3)
-    input = np.array([1, 2, 3, 4])
-    out = np.array([2, 3, 4, 5])
-
-    print(glove.embeddings())
-    # y = Variable(t.Tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
-    # print(y[0, 0])
